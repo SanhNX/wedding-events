@@ -26,6 +26,8 @@
         width: 110px;
         margin: 0px 10px;
         float: left;
+        position: relative;
+        z-index: 1;
     }
 
         .nav .nav-item .nav-link {
@@ -69,9 +71,9 @@
                     background: url('../images/icon/tag-left-focus.png') no-repeat center center;
                 }
 
-            .nav .nav-item.nav-tag:hover .nav-sub-list {
-                display: block;
-            }
+        .nav .nav-item:hover .nav-sub-list {
+            display: block;
+        }
 
 .nav-sub-list {
     display: none;
@@ -178,9 +180,11 @@
 
     .products .content {
         height: 1200px;
-        -webkit-border-radius: 50px;
-        -webkit-box-shadow: inset 0px 0px 30px 0px #E6C03C;
-        background: white;
+        -webkit-box-shadow: 0px 0px 5px 0px #666;
+        border: 15px solid #DBC932;
+        border-radius: 5px;
+        background: url('../images/icon/head-bg.png')repeat-x;
+        background-color: white;
         overflow: hidden;
     }
 
@@ -196,18 +200,19 @@
     width: 290px;
     height: 400px;
     float: left;
-    margin: 0px 0px 20px 30px;
+    margin: 0px 0px 20px 23px;
 }
 
 .item-title {
-    height: 50px;
-    line-height: 25;
+    height: 60px;
+    line-height: 30px;
+    text-align: center;
     font-size: 18px;
     color: #CEBB26;
 }
 
 .footer {
-    height: 400px;
+    height: 800px;
     -webkit-border-radius: 50px;
     -webkit-box-shadow: inset 0px 0px 30px 0px #E6C03C;
     background: white;
@@ -243,3 +248,124 @@
             color: #555;
             text-decoration: none;
         }
+
+.line {
+    height: 16px;
+    background: url('../images/icon/line.png')no-repeat center center;
+    margin: 20px 0px;
+    clear: both;
+}
+.line-decor {
+    height: 12px;
+    background: url('../images/icon/line-decor.png')no-repeat center center;
+    clear: both;
+}
+.item-source {
+    width: 270px;
+    margin: 0px auto;
+}
+
+    .item-source img {
+        width: 100%;
+    }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(66, 66, 66, 0.5);
+    z-index: 10;
+}
+
+    .popup .popup-form {
+        position: relative;
+        top: 10%;
+        margin: 0px auto;
+        min-height: 540px;
+        min-width: 950px;
+        width: 90%;
+        background: #FFF;
+        -webkit-box-shadow: 0px 0px 40px 0px black;
+        z-index: 100;
+    }
+
+        .popup .popup-form .popup-form-left {
+            position: relative;
+            background: #000;
+        }
+
+            .popup .popup-form .popup-form-left:hover .popup-button-next,
+            .popup .popup-form .popup-form-left:hover .popup-button-prev {
+                display: block;
+                cursor: pointer;
+            }
+
+        .popup .popup-form .popup-form-right {
+            width: 350px;
+            position: relative;
+        }
+
+            .popup .popup-form .popup-form-right iframe {
+                width: 330px!important;
+            }
+
+            .popup .popup-form .popup-form-right .fb-comments {
+                width: 350px;
+                height: 470px;
+                overflow-x: hidden;
+            }
+
+
+            .popup .popup-form .popup-form-right .popup-control {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width:100%;
+            }
+            .popup .popup-form .popup-form-right #popup-button-close {
+                height: 30px;
+                width: 30px;
+                float: right;
+                cursor: pointer;
+                background: url('../images/icon/force-close.png')no-repeat center center;
+                background-size: 30px;
+            }
+
+        .popup .popup-form .popup-button-next, .popup-button-prev {
+            display: none;
+            position: absolute;
+            background: url('../images/icon/next-prev.png')no-repeat -26px center;
+            height: 100%;
+            width: 50px;
+            top: 0px;
+            right: 0px;
+            z-index: 100;
+        }
+
+        .popup .popup-form .popup-button-prev {
+            left: 0px;
+            background: url('../images/icon/next-prev.png')no-repeat 23px center;
+        }
+
+
+
+        .popup .popup-form .popup-source {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+            .popup .popup-form .popup-source img {
+            }
+
+.item-source:after {
+    display: inline-block;
+    height: 19px;
+    width: 100%;
+    position: relative;
+    background: url('../images/icon/bottom-shadow.png')no-repeat bottom center;
+    top: -4px;
+    content: "";
+}

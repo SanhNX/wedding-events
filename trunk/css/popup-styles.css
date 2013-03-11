@@ -1,0 +1,92 @@
+﻿
+.popup {
+    display: none;
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(66, 66, 66, 0.5);
+    z-index: 10;
+}
+
+    .popup .popup-form {
+        position: relative;
+        top: 10%;
+        margin: 0px auto;
+        min-height: 540px;
+        min-width: 950px;
+        width: 90%;
+        background: #FFF;
+        -webkit-box-shadow: 0px 0px 40px 0px black;
+        z-index: 100;
+    }
+
+        .popup .popup-form .popup-form-left {
+            position: relative;
+            background: #000;
+        }
+
+            .popup .popup-form .popup-form-left:hover .popup-button-next,
+            .popup .popup-form .popup-form-left:hover .popup-button-prev {
+                display: block;
+                cursor: pointer;
+            }
+
+        .popup .popup-form .popup-form-right {
+            width: 350px;
+            position: relative;
+        }
+
+            .popup .popup-form .popup-form-right iframe {
+                width: 330px!important;
+            }
+
+            .popup .popup-form .popup-form-right .fb-comments {
+                width: 350px;
+                height: 470px;
+                overflow-x: hidden;
+            }
+
+
+            .popup .popup-form .popup-form-right .popup-control {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width: 100%;
+            }
+
+            .popup .popup-form .popup-form-right #popup-button-close {
+                height: 30px;
+                width: 30px;
+                float: right;
+                cursor: pointer;
+                background: url('../images/icon/force-close.png')no-repeat center center;
+                background-size: 30px;
+            }
+
+        .popup .popup-form .popup-button-next, .popup-button-prev {
+            display: none;
+            position: absolute;
+            background: url('../images/icon/next-prev.png')no-repeat -26px center;
+            height: 100%;
+            width: 50px;
+            top: 0px;
+            right: 0px;
+            z-index: 100;
+        }
+
+        .popup .popup-form .popup-button-prev {
+            left: 0px;
+            background: url('../images/icon/next-prev.png')no-repeat 23px center;
+        }
+
+
+
+        .popup .popup-form .popup-source {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+            .popup .popup-form .popup-source img {
+            }
