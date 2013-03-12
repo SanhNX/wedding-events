@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Admin Navigator
+    </title>
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="js/commons/jquery-1.8.3.min.js"></script>
+    <script src="js/commons/jquery-colors-min.js"></script>
+
+    <script type="text/javascript" src="js/admin.js"></script>
+    <style>
+        .admin-panel {
+            list-style-type: upper-roman;
+        }
+
+        .anav-sub-list {
+            list-style-type: decimal;
+        }
+
+        .anav-sub2-list {
+            list-style-type: lower-latin;
+        }
+
+        .btn-remove, .btn-add {
+            width: 20px;
+            height: 20px;
+            background: red;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0px 5px;
+            cursor:pointer;
+        }
+
+        .btn-add {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="fb-root"></div>
+
+    <div class="page">
+        <div class="header">
+            <div class="logo"></div>
+            <ul class="nav" id="main-nav">
+                <li class="nav-item"><a class="nav-link">Trang chủ</a></li>
+                <li class="nav-item">
+                    <a class="nav-link">Giới thiệu</a>
+                    <ul class="nav-sub-list">
+                        <li class="nav-sub-item"><a class="nav-sub-link">Clip</a>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link">Chương trình</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link">Trang điểm</a></li>
+                <li class="nav-item"><a class="nav-link">Áo cưới</a></li>
+                <li class="nav-item"><a class="nav-link">Dịch vụ</a></li>
+                <li class="nav-item"><a class="nav-link">Chụp hình</a></li>
+                <li class="nav-item nav-tag">
+                    <a class="nav-link"><span>Your style, your happiness</span></a>
+                    <ul class="nav-sub-list">
+                        <li class="nav-sub-item"><a class="nav-sub-link">Clip</a>
+                            <ul class="nav-sub2-list">
+                                <li class="nav-sub2-item"><a class="nav-sub2-link">Nha Trang</a></li>
+                                <li class="nav-sub2-item"><a class="nav-sub2-link">Vũng Tàu</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-sub-item">
+                            <a class="nav-sub-link">Chương trình</a>
+                            <ul class="nav-sub2-list">
+                                <li class="nav-sub2-item"><a class="nav-sub2-link">Nha Trang</a></li>
+                                <li class="nav-sub2-item"><a class="nav-sub2-link">Vũng Tàu</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="banner">
+            </div>
+        </div>
+        <div class="products">
+            <div class="title">
+                <span class="title-logo"></span>
+                <span class="title-text">Your style., your happiness / Chương trình / Vũng Tàu</span>
+            </div>
+            <div class="content">
+                <div class="line"></div>
+                <ul class="admin-panel" id="admin-panel"></ul>
+                <div class="line"></div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
