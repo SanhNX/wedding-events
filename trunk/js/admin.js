@@ -53,6 +53,7 @@ $(function () {
                         subUrl2.value = href;
                         subItem2.appendChild(subLink2);
                         subItem2.appendChild(subUrl2);
+                        subItem2.appendChild(createElement('a', 'btn-remove'));
                         subList.appendChild(subItem2);
                     });
 
