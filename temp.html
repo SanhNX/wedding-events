@@ -13,14 +13,7 @@
 
     <script type="text/javascript" src="js/temp.js"></script>
     <script>
-        // Load the SDK Asynchronously
-        (function (d) {
-            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement('script'); js.id = id; js.async = true;
-            js.src = "http://connect.facebook.net/en_US/all.js#xfbml=1";
-            ref.parentNode.insertBefore(js, ref);
-        }(document));
+       
     </script>
     <style type="text/css">
         .popup-col-right {
@@ -176,13 +169,15 @@
                         <div class="popup-button-prev" id="popup-button-prev"></div>
                         <div class="popup-source" id="popup-source"></div>
                     </td>
-                    <td class="popup-form-right">
+                    <td class="popup-form-right" id="popup-form-right">
                         <div class="popup-control">
                             <div id="popup-button-close"></div>
                             <div class="line-decor"></div>
                         </div>
-                        <div class="fb-comments" data-href="http://www.haivl.com/photo/193186" 
-                            data-width="470" data-num-posts="10"></div>
+                        <div class="fb-comments" id="popup-fb-comments" 
+                            data-href="" 
+                            data-width="470" 
+                            data-num-posts="10"</div>
 
                     </td>
                 </tr>

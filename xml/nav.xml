@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nav>
+  <item text="Trang chủ" href="#000"></item>
+  <item text="Giới thiệu" href="#00"></item>
+  <item text="Chương trình" href="#0"></item>
+  <item text="Trang điểm" href="#2"></item>
+  <item text="Áo cưới" href="#5"></item>
+  <item text="Chụp hình" href="#5"></item>
+  <item text="Your style, your happiness" href="#5">
+    <subItem text="Clip" href="#01">
+      <subItem2 text="Nha Trang" href="#011"></subItem2>
+      <subItem2 text="Vũng Tàu" href="#012"></subItem2>
+    </subItem>
+    <subItem text="Chương trình" href="#02">
+      <subItem2 text="Nha Trang" href="#021"></subItem2>
+      <subItem2 text="Vũng Tàu" href="#022"></subItem2>
+    </subItem>
+  </item>
+</nav>
