@@ -20,10 +20,10 @@
         </div>
         <ul class="nav" id="main-nav">
             <li class="nav-item item0"><a class="nav-link" href="admin.php">Trang chủ</a></li>
-            <li class="nav-item item1"><a class="nav-link">Giới thiệu</a></li>
-            <li class="nav-item item2"><a class="nav-link" href="">Chụp hình</a></li>
-            <li class="nav-item item3"><a class="nav-link">Trang điểm</a></li>
-            <li class="nav-item item4"><a class="nav-link">Áo cưới</a></li>
+            <li class="nav-item item1"><a class="nav-link" href="listbaiviet.php?type=1">Giới thiệu</a></li>
+            <li class="nav-item item2"><a class="nav-link" href="listbaiviet.php?type=4">Chụp hình</a></li>
+            <li class="nav-item item3"><a class="nav-link" href="listbaiviet.php?type=4">Trang điểm</a></li>
+            <li class="nav-item item4"><a class="nav-link" href="listbaiviet.php?type=4">Áo cưới</a></li>
             <li class="nav-item item5"><a class="nav-link">Dịch vụ</a></li>
             <li class="nav-item item6"><a class="nav-link"></a></li>
         </ul>

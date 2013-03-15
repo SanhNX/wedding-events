@@ -1,0 +1,20 @@
+	.products .content .descriptionTopic {
+		margin: 20px;
+	}
+	.products .content .pic {
+		width: 300px;
+		height: 200px;
+		margin-left: 250px;
+        background: url('../images/resource/slide3.jpg')repeat-x;
+		background-size: 100%;
+    }
+	.footer {
+		height: 100px;
+	}
+	.footer .fb-logo {
+		width: 200px;
+		height: 65px;
+		margin: 30px 0px 0px 40px;
+		background: url('../images/icon/logo-fb.png') no-repeat;
+		background-size: 70%;
+	}
