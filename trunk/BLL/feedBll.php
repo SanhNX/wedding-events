@@ -1,9 +1,10 @@
 <?php
 
-function getFeedList() {
+function getFeedList($LoaiId) {
     $sql = "
-                SELECT `Id`, `LoaiId`, `Ten`, `Date`, `Noidung`, `Hinhanh`, `Video`, `Diadiem`
-                FROM  tb_baiviet b, tb_diadiem d, tb_loai l";
+                SELECT `Id`, `LoaiId`, `Tieude`, `Date`, `Noidung`, `Hinhanh`, `Video`, `Diadiem`
+                FROM  tb_baiviet b 
+                WHERE b.LoaiId = ".$LoaiId;
     $queryResult = mysql_query($sql);
     $i = 0;
     $result;
@@ -11,7 +12,7 @@ function getFeedList() {
         $item = new Feed();
         $item->Id = $seletedItem['Id'];
         $item->LoaiId = $seletedItem['LoaiId'];
-        $item->Ten = $seletedItem['Ten'];
+        $item->Ten = $seletedItem['Tieude'];
         $item->Date = $seletedItem['Date'];
         $item->Noidung = $seletedItem['Noidung'];
 
@@ -25,9 +26,9 @@ function getFeedList() {
 }
 
 function getFeed_byID($id) {
-    $sql = "SELECT `Id`, `LoaiId`, `Ten`, `Date`, `Noidung`, `Hinhanh`, `Video`, `Diadiem`
-            FROM  tb_baiviet b, tb_diadiem d, tb_loai l
-            WHERE  b.Id = $id ";
+    $sql = "SELECT `Id`, `LoaiId`, `Tieude`, `Date`, `Noidung`, `Hinhanh`, `Video`, `Diadiem`
+            FROM  tb_baiviet b
+            WHERE b.Id = $id ";
     $queryResult = mysql_query($sql);
 
     if (!$queryResult) {
@@ -39,7 +40,7 @@ function getFeed_byID($id) {
     $item = new Feed();
     $item->Id = $seletedItem['Id'];
     $item->LoaiId = $seletedItem['LoaiId'];
-    $item->Ten = $seletedItem['Ten'];
+    $item->Ten = $seletedItem['Tieude'];
     $item->Date = $seletedItem['Date'];
     $item->Noidung = $seletedItem['Noidung'];
 
@@ -67,7 +68,7 @@ function addBook($LoaiId,
     $Diadiem = mysql_real_escape_string($Diadiem);
 
     $sql = "INSERT INTO `weddingevents`.`tb_baiviet` (
-	`LoaiId`, `Ten`, `Date`, `Noidung`, 
+	`LoaiId`, `Tieude`, `Date`, `Noidung`, 
 	`Hinhanh`, `Video`, `Diadiem`) 
 	VALUES ('$LoaiId', '$Ten','$Date', '$Noidung', 
 	'$Hinhanh', '$Video', '$Diadiem');";

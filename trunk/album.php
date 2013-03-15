@@ -5,67 +5,20 @@
     </title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/nav-styles.css" rel="stylesheet" />
-    <link href="css/listview-styles.css" rel="stylesheet" />
+    <link href="css/album-styles.css" rel="stylesheet" />
     <link href="css/popup-styles.css" rel="stylesheet" />
     
     <script src="js/commons/jquery-1.8.3.min.js"></script>
     <script src="js/commons/jquery-colors-min.js"></script>
 
     <script type="text/javascript" src="js/temp.js"></script>
-    <script>
-       
-    </script>
-    <style type="text/css">
-        .popup-col-right {
-            width: 350px;
-            background: #000;
-        }
-    </style>
 </head>
 <body>
     <div id="fb-root"></div>
-
+<?php
+            include './module/header.php';
+            ?>
     <div class="page">
-        <div class="header">
-            <div class="logo"></div>
-            <ul class="nav" id="main-nav">
-                <li class="nav-item"><a class="nav-link">Trang chủ</a></li>
-                <li class="nav-item">
-                    <a class="nav-link">Giới thiệu</a>
-                    <ul class="nav-sub-list">
-                        <li class="nav-sub-item"><a class="nav-sub-link">Clip</a>
-                        </li>
-                        <li class="nav-sub-item">
-                            <a class="nav-sub-link">Chương trình</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link">Trang điểm</a></li>
-                <li class="nav-item"><a class="nav-link">Áo cưới</a></li>
-                <li class="nav-item"><a class="nav-link">Dịch vụ</a></li>
-                <li class="nav-item"><a class="nav-link">Chụp hình</a></li>
-                <li class="nav-item nav-tag">
-                    <a class="nav-link"><span>Your style, your happiness</span></a>
-                    <ul class="nav-sub-list">
-                        <li class="nav-sub-item"><a class="nav-sub-link">Clip</a>
-                            <ul class="nav-sub2-list">
-                                <li class="nav-sub2-item"><a class="nav-sub2-link">Nha Trang</a></li>
-                                <li class="nav-sub2-item"><a class="nav-sub2-link">Vũng Tàu</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-sub-item">
-                            <a class="nav-sub-link">Chương trình</a>
-                            <ul class="nav-sub2-list">
-                                <li class="nav-sub2-item"><a class="nav-sub2-link">Nha Trang</a></li>
-                                <li class="nav-sub2-item"><a class="nav-sub2-link">Vũng Tàu</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="banner">
-            </div>
-        </div>
         <div class="products">
             <div class="title">
                 <span class="title-logo"></span>
@@ -148,16 +101,10 @@
         <div class="footer">
             <div class="line"></div>
 
-            <ul class="footer-nav">
-                <li class="footer-nav-item"><span class="footer-icon"></span><a href="#">TRANG ĐIỂM ĐÁM CƯỚI THEO PHONG CÁCH VINTAGE</a></li>
-                <li class="footer-nav-item"><span class="footer-icon"></span><a href="#">TRANG ĐIỂM ĐÁM CƯỚI THEO PHONG CÁCH VINTAGE</a></li>
-                <li class="footer-nav-item"><span class="footer-icon"></span><a href="#">TRANG ĐIỂM ĐÁM CƯỚI THEO PHONG CÁCH VINTAGE</a></li>
-                <li class="footer-nav-item"><span class="footer-icon"></span><a href="#">TRANG ĐIỂM ĐÁM CƯỚI THEO PHONG CÁCH VINTAGE</a></li>
-                <li class="footer-nav-item"><span class="footer-icon"></span><a href="#">TRANG ĐIỂM ĐÁM CƯỚI THEO PHONG CÁCH VINTAGE</a></li>
-            </ul>
-            <div class="footer-fb">
-                <div class="fb-comments" data-href="http://www.haivl.com/photo/193186" data-width="470" data-num-posts="10"></div>
-            </div>
+            
+            <?php
+            include './module/footer.php';
+            ?>
         </div>
     </div>
     <div class="popup" id="popup">
@@ -178,7 +125,6 @@
                             data-href="" 
                             data-width="470" 
                             data-num-posts="10"</div>
-
                     </td>
                 </tr>
             </table>

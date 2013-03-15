@@ -81,7 +81,6 @@
                                 <tr>
                                     <td class="style2"><span>Loại:</span></td>
                                     <td><select name="cboCategory" class="admin-textbox input-box">
-
                                             <?php
                                             $catelogyList = getCatelogyList();
                                             foreach ($catelogyList as $item) {
@@ -114,7 +113,8 @@
                                 </tr>
                                 <tr>
                                     <td class="style2">Hình ảnh:</td>
-                                    <td><input id="File1" name="img[]" class="admin-textbox input-box"
+                                    <td>
+                                        <input id="File1" name="img[]" class="admin-textbox input-box"
                                                type="file" />
                                     </td>
                                 </tr>
@@ -141,7 +141,6 @@
 
                             <?php
                             if (isset($_POST['btnUpload'])) {
-                                echo "<br/><div class='message'>Thêm mới !!!!!</div> ";
                                 $isAddSuccess = addBook(
                                         $_POST['cboCategory'],
                                         $_POST['txtName'], 
