@@ -38,6 +38,7 @@
                             var subLink2 = document.createElement('a')
                             subLink2.className = 'nav-sub2-link';
                             subLink2.innerText = text;
+                            subLink2.href = href;
                             subItem2.appendChild(subLink2);
                             subList.appendChild(subItem2);
                         });
