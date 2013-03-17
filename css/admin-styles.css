@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI',Tahoma;
+    background: url('../images/bg/bg-top.png') no-repeat top right,url('../images/bg/bg-bottom.png') no-repeat bottom left;
+    background-color: #F5DEEE;
+}
+.popup-col-right {
+    width: 350px;
+    background: #000;
+}
+.page {
+    width: 990px;
+    min-height: 1500px;
+    margin: 0px auto;
+}
+.products .title {
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #CEBB26;
+    background-color: #E4E4E4;
+    text-indent: 10px;
+}
+
+.products .title .title-logo {
+    background-position: center center;
+    height: 50px;
+    width: 75px;
+    display: block;
+    float: left;
+    background-image: url('../images/icon/logo-small.png');
+    background-repeat: no-repeat;
+}
+
+.products .content {
+    padding: 20px 0px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.product-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin: 50px 0px 0px 0px;
+}
+.products .content.error {
+    margin-top: 200px;
+    height: 130px;
+}
+.products .content.error .error-panel {
+    height: 70px;
+    text-align: center;
+    font-size: 20px;
+    color: maroon;
+}
+.logo {
+    background-position: center center;
+    height: 140px;
+    background-image: url('../images/icon/logo.png');
+    background-repeat: no-repeat;
+    background-size: auto 120px;
+}
+
+.line {
+    height: 16px;
+    background: url('../images/icon/line.png')no-repeat center center;
+    margin: 20px 0px;
+    clear: both;
+}
+.line-decor {
+    height: 12px;
+    background: url('../images/icon/line-decor.png')no-repeat center center;
+    clear: both;
+}
+
+
+
+
+.admin-textbox{
+    width: 800px;
+}
+
+.ad-nav{
+    background-color: #AF4A4A;
+    list-style: none;  
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+.ad-nav .nav-item {
+    height: 100%;
+    line-height: 40px;
+    width: 160px;
+    float: left;
+    background-color: #AF4A4A;
+    text-align: center;
+    color: white;
+}
+.ad-nav .nav-item:hover {
+    background-color: #862020;
+}
+.ad-nav .nav-item .nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.admin-tab{
+    margin: 0px 20px;
+}
+#admin-area{
+    height: 250px;
+}
+.products {
+    -webkit-box-shadow: 0px 0px 5px 0px;
+    -webkit-border-radius: 5px;
+    overflow: hidden;
+}
+.admin-grid{
+    font-size: 13px;
+    width: 95%;
+    margin: 0px auto;
+    border: 1px solid #EEE;
+    border-collapse: collapse;
+}
+.admin-grid tr:nth-child(odd){
+    background-color: #EEE;
+}
+.admin-grid .grid-col-large{
+    width: 300px;
+}
+.admin-grid .grid-col-medium{
+    width: 150px;
+}
+.admin-grid .grid-des {
+    height: 80px;
+    overflow: hidden;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+.admin-grid .grid-img{
+    width: 100px;
+}
+.admin-grid-footer{
+    text-align: center;
+}
+.admin-grid-footer .btn-upload{
+    height: 30px;
+    width: 150px;
+    text-align: center;
+}
+.admin-message {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 5px 25px;
+    background-color: #CDF0CD;
+    -webkit-border-radius: 5px;
+    color: green;
+}
+.admin-message.error {
+    background-color: #F0DECD;
+    color: green;
+}
+.grid-col-button {
+    width: 50px;
+}
+.grid-col-button a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+    margin: 0px 5px;
+}
+.grid-col-button a.btn-edit{
+    background:url('../images/icon/btn-edit.png')no-repeat center center;
+    background-size: 20px;
+}
+.grid-col-button a.btn-delete{
+    background:url('../images/icon/btn-delete.png')no-repeat center center;
+    background-size: 20px;
+}
+
+.btn-page {
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 25px;
+    display: inline-block;
+    background: maroon;
+    color: white;
+    margin: 5px;
+}
+.btn-page.active {
+    background: #8B8B8B;
+}
+.btn-add{
+    float: right;
+    display: inline-block;
+    background: green;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 70px;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+}
+#admin-tab{
+    display: none;
+}
+.nicEdit-main {
+    height: 390px;
+    overflow-x: hidden!important;
+    overflow-y: scroll!important;
+}

@@ -1,20 +1,31 @@
-	.products .content .descriptionTopic {
-		margin: 20px;
-	}
-	.products .content .pic {
-		width: 300px;
-		height: 200px;
-		margin-left: 250px;
-        background: url('../images/resource/slide3.jpg')repeat-x;
-		background-size: 100%;
-    }
-	.footer {
-		height: 100px;
-	}
-	.footer .fb-logo {
-		width: 200px;
-		height: 65px;
-		margin: 30px 0px 0px 40px;
-		background: url('../images/icon/logo-fb.png') no-repeat;
-		background-size: 70%;
-	}
+.products .content .descriptionTopic {
+    line-height: 25px;
+    margin: 10px 30px;
+    color: #6F6F6F;
+}
+.products .content img {
+    display: block;
+    margin: 10px auto;
+    max-width: 510px;
+    border: 10px solid white;
+    -webkit-box-shadow: 0px 0px 5px 0px #BEBEBE;
+}
+.products .content {
+    height: auto!important;
+}
+.products .content .pic {
+    width: 300px;
+    height: 200px;
+    margin-left: 250px;
+    background-size: 100%;
+}
+.footer {
+    height: 100px;
+}
+.footer .fb-logo {
+    width: 200px;
+    height: 65px;
+    margin: 30px 0px 0px 40px;
+    background: url('../images/icon/logo-fb.png') no-repeat;
+    background-size: 70%;
+}

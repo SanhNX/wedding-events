@@ -28,21 +28,23 @@
                         include 'DTO/object.php';
 
                         include 'BLL/feedBll.php';
+                        include './utils/simple_html_dom.php';
                         if (count($_REQUEST) == 0)
                             echo "----------";
                         else {
                             $itemList = getFeedList($_REQUEST['type']);
                             foreach ($itemList as $item) {
                                 echo "<li class='topic-item'>";
-                                echo "<a class='topic-link' href=gioithieu.php?id=" . $item->Id . ">";
-                                echo "<div class='topic-item-pic' style='background:url(" . $item->Hinhanh . ")no-repeat center center;background-size: 100%;'></div>";
+                                echo "<a class='topic-link' href=baiviet.php?id=" . $item->Id . ">";
+                                echo "<img class='topic-item-pic' src='images/resource/img/" . $item->Id . "/" . $item->Id . "-0.jpeg' />";
                                 echo "<div class='topic-item-content'>";
-                                echo "<div class='content-title'>" . $item->Ten . "</div>";
+                                echo "<span class='content-title'>" . $item->Ten . "</span>";
                                 echo "<div class='content-datetime'>";
-                                echo "<div class='date'>" . $item->Date . "</div>";
-                                echo "<div class='time'>20h15</div>";
+                                echo "<span class='date'>" . $item->Date . "</span>";
+                                echo "<span class='time'>20h15</span>";
                                 echo "</div>";
-                                echo "<div class='content-quote'>" . $item->Noidung . "</div>";
+                                $html = str_get_html($item->Noidung);
+                                echo "<span class='content-quote'>" . $html->plaintext . "</span>";
                                 echo "</div>";
                                 echo "</a>";
                                 echo "</li>";

@@ -58,9 +58,7 @@
                     else {
                         $item = getFeed_byID($_REQUEST['id']);
                         echo "<div class='descriptionTopic'>";
-                        echo $item->Noidung . " " . $item->Noidung . "<br/>";
-                        echo "<img class='pic' src='" . $item->Hinhanh . "'/><br/>";
-                        echo $item->Noidung . " " . $item->Noidung;
+                        echo $item->Noidung . "<br/>";
                         echo "</div>";
                     }
                     ?>

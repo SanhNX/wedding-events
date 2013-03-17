@@ -40,7 +40,6 @@
 }
 
 .products .content {
-    height: 1200px;
     /*-webkit-box-shadow: 0px 0px 5px 0px #666;
     border: 15px solid #DBC932;
     border-radius: 5px;
@@ -58,7 +57,16 @@
     padding: 0;
     margin: 50px 0px 0px 0px;
 }
-
+.products .content.error {
+    margin-top: 200px;
+    height: 130px;
+}
+.products .content.error .error-panel {
+    height: 70px;
+    text-align: center;
+    font-size: 20px;
+    color: maroon;
+}
 .logo {
     background-position: center center;
     height: 300px;

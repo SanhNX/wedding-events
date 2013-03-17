@@ -89,10 +89,12 @@
     font-size: 16px;
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .nav-sub-list .nav-sub-item:hover .nav-sub-link {
     background: url('../images/icon/tag-right-focus.png') no-repeat left center;
+    text-decoration: none;
 }
 
 .nav-sub-list .nav-sub-item:hover .nav-sub2-list {
@@ -128,8 +130,10 @@
     background-color: #CDBB24;
     -webkit-border-radius: 5px;
     -webkit-box-shadow: 0px 0px 5px 0px black;
+    text-decoration: none;
 }
 
 .nav-sub-list .nav-sub2-item:hover .nav-sub2-link {
     background-color: #ef1224;
+    text-decoration: none;
 }

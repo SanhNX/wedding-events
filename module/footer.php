@@ -1,4 +1,5 @@
 <div class="footer">
+    <div class="line"></div>
     <ul class="footer-nav">
         <li class="footer-nav-item"><span class="footer-icon"></span><a href="#">TRANG ĐIỂM ĐÁM CƯỚI THEO PHONG CÁCH VINTAGE</a></li>
         <li class="footer-nav-item"><span class="footer-icon"></span><a href="#">TRANG ĐIỂM ĐÁM CƯỚI THEO PHONG CÁCH VINTAGE</a></li>

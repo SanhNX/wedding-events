@@ -34,14 +34,15 @@
                         include 'BLL/feedBll.php';
                         if (count($_REQUEST) == 0)
                             echo "----------";
-                        else {                            
-                            $itemList = getFeed_byDDAndSubDD($_REQUEST['dd'], $_REQUEST['subdd']);
+                        else {
+                            
+                            $itemList = getFeed_byDD($_REQUEST['dd']);
                             $i = 0;
                             foreach ($itemList as $item) {
-                                echo "<li class='product-item' data-index='". $i ."' data-clip='false'>";
+                                echo "<li class='product-item' data-index='". $i ."' data-clip='true' data-poster='". $item->Hinhanh ."' data-clip-url='".$item->Video."'>";
                                 echo "<div class='item-title'>" . $item->Ten . "</div>";
-                                echo "<div class='item-source'>";
-                                echo "<img src='" . $item->Hinhanh . "' alt='Click vào để xem hình' />";
+                                echo "<div class='item-source clip'>";
+                                echo "<img src='" . $item->Hinhanh . "' />";
                                 echo "</div>";
                                 echo "<div class='item-fb'></div>";
                                 echo "</li>";

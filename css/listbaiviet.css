@@ -1,24 +1,26 @@
 ﻿
 .products .content .topic-list {
     list-style: none;
-    margin: 10px;
+    margin: 20px;
+    padding: 0;
 }
 
 .products .content .topic-item {
-    margin-top: 45px;
+    clear: both;
+    height: 200px;
 }
 .products .content .topic-item .topic-link {
     text-decoration: none;
     color: #000;
 }
 .products .content .topic-item  .topic-item-pic{		
-    height: 180px;
-    width: 250px;
-    display: block;
+    width: 230px;
     float: left;
+    margin: 10px;
 }
 .products .content .topic-item  .topic-item-content{
-
+    float: left;
+    width: 650px;
 }
 
 .products .content .topic-item  .topic-item-content .content-title{
