@@ -1,17 +1,20 @@
 <?php
 
-class Catelogy
-{
+class Catelogy{
 	var $Id;
 	var $Ten;
 }
-class Address
-{
+class Address{
 	var $Id;
 	var $Ten;
 }
-class Feed
-{
+
+class SubAddress{
+	var $Id;	
+        var $DdId;
+	var $Ten;
+}
+class Feed{
 	var $Id;
 	var $LoaiId;
 	var $Ten;
@@ -20,7 +23,6 @@ class Feed
 	var $Hinhanh;
 	var $Video;
 	var $Diadiem;
-	
         
 	var $LoaiName;
 	var $DiadiemrName;

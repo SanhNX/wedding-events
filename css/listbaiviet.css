@@ -7,16 +7,24 @@
 
 .products .content .topic-item {
     clear: both;
-    height: 200px;
+    height: 220px;
 }
 .products .content .topic-item .topic-link {
     text-decoration: none;
     color: #000;
 }
-.products .content .topic-item  .topic-item-pic{		
-    width: 230px;
+.topic-item-src{
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
     float: left;
     margin: 10px;
+    border: 10px solid white;
+    -webkit-box-shadow: 0px 0px 5px 0px #555;
+}
+.products .content .topic-item  .topic-item-pic{		
+    max-height: 180px;
+    min-width: 180px;
 }
 .products .content .topic-item  .topic-item-content{
     float: left;
@@ -39,9 +47,16 @@
 }
 .products .content .topic-item  .topic-item-content .content-quote{
     text-indent: 10px;
+    height: 130px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
 }
 .products .content .topic-item:hover {
-    background-color: #AAA;
+    background-color: #FFF7FD;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: inset 0px 0px 27px 0px #E6C03C;
 }
 
 .footer .footer-nav {
@@ -86,4 +101,20 @@
     margin: 30px 0px 0px 40px;
     background: url('../images/icon/logo-fb.png') no-repeat;
     background-size: 70%;
+}
+
+.btn-page {
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 25px;
+    display: inline-block;
+    background: #CC77B2;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    -webkit-border-radius: 5px;
+}
+.btn-page.active {
+    background: #8B8B8B;
 }

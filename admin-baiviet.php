@@ -1,20 +1,20 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Admin Navigator
-        </title>
-        <link href="css/admin-styles.css" rel="stylesheet" />
-        <script src="js/commons/jquery-1.8.3.min.js"></script>
-        <script src="js/commons/jquery-colors-min.js"></script>       
-        <script src="js/commons/nic-edit.js"></script>
-        <script src="js/admin-page.js"></script>
+        <title>Admin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <link href="css/admin-styles.css" rel="stylesheet" />
+            <script src="js/commons/jquery-1.8.3.min.js"></script>
+            <script src="js/commons/jquery-colors-min.js"></script>       
+            <script src="js/commons/nic-edit.js"></script>
+            <script src="js/admin-page.js"></script>
 
 
-        <script type="text/javascript">
-            bkLib.onDomLoaded(function() {
-                nicEditors.allTextAreas()
-            });
-        </script>
+            <script type="text/javascript">
+                bkLib.onDomLoaded(function() {
+                    nicEditors.allTextAreas()
+                });
+            </script>
     </head>
     <body>
         <div id="fb-root"></div>
@@ -47,10 +47,9 @@
                                     header("Location: error.php");
                                 else {
                                     $_REQUEST['type'];
-                                    $page=  isset($_REQUEST['page'])?$_REQUEST['page']:0;
-                                    buildGridFeed($_REQUEST['type'],$page,3);
+                                    $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 0;
+                                    buildGridFeed($_REQUEST['type'], $page, 5);
                                 }
-                                
                                 ?>
                                 <div id="admin-tab">
                                     <table class="admin-tab" >
@@ -61,14 +60,23 @@
                                         <tr>
                                             <td class="style2"><span>Địa điểm:</span></td>
                                             <td><select name="cboAddress"  id="cboAddress"class="admin-textbox input-box">
-
                                                     <?php
                                                     $addressList = getAddressList();
                                                     foreach ($addressList as $item) {
                                                         echo "<option value='$item->Id'>$item->Ten</option>";
                                                     }
                                                     ?>
-
+                                                </select></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style2"><span>Khu vực:</span></td>
+                                            <td><select name="cboSubAddress"  id="cboSubAddress"class="admin-textbox input-box">
+                                                    <?php
+                                                    $addressSubList = getSubAddressList();
+                                                    foreach ($addressSubList as $item) {
+                                                        echo "<option value='$item->Id'>$item->Ten</option>";
+                                                    }
+                                                    ?>
                                                 </select></td>
                                         </tr>
                                         <tr>
@@ -99,25 +107,32 @@
 
                                     if ($newFeedId != -1) {
                                         //Create resource folder
-                                        $newDir = getcwd() . "/images/resource/img/" . $newFeedId;
-                                        mkdir($newDir, 777);
+                                        $newDir = "images/resource/img/" . $newFeedId;
+
+                                        $oldmask = umask(0);
+                                        mkdir($newDir, 0777);
+                                        umask($oldmask);
+
                                         $html = str_get_html($_POST['txtDescription']);
                                         $i = 0;
                                         foreach ($html->find('img') as $element) {
                                             $newImageName = $newFeedId . '-' . $i . '.jpeg';
+                                            $imgUrl = str_replace('\\"', '', $element->src);
+                                            //copy($imgUrl, $newDir . '/' . $newImageName);
+                                            file_put_contents($newDir . '/' . $newImageName, file_get_contents($imgUrl));
 
-                                            copy($element->src, $newDir . '/' . $newImageName);
+
                                             $html->find('img', $i)->src = "images/resource/img/" . $newFeedId . '/' . $newImageName;
                                             $i++;
                                         }
                                         updateFeedDescript($newFeedId, $html);
-
-
-                                        echo "<div class='admin-message'>Thêm mới hoàn tất!</div> ";
+                                        echo "<div class='admin-message'>Thêm Mới Hoàn Tất!</div> ";
+                                        echo '<script>alert("Thêm Mới Hoàn Tất!");
+                                            parent.window.location.reload(true);</script>';
                                     } else {
-                                         echo "<div class='admin-message error'>Xảy ra sự cố!</div> ";
+                                        echo "<div class='admin-message error'>Xảy Ra Sự Cố!</div> ";
                                     }
-                                }
+                                } 
                                 if (isset($_POST['btnDelete'])) {
                                     echo "<div class='admin-message error'>Detete</div> ";
                                 }
