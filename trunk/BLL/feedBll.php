@@ -51,8 +51,6 @@ function getFeed_byID($id) {
 }
 
 function addFeed($LoaiId, $Ten, $Date, $Noidung, $Hinhanh, $Video, $Diadiem) {
-    //Tránh tình trạnh các biến có chứa các dấu nháy (',",..)làm sinh lỗi truy vấn
-    //Ta dùng mysql_real_escape_string() để đổi sang dạng thuần string
     $LoaiId = mysql_real_escape_string($LoaiId);
     $Ten = mysql_real_escape_string($Ten);
     $Date = mysql_real_escape_string($Date);
@@ -61,7 +59,7 @@ function addFeed($LoaiId, $Ten, $Date, $Noidung, $Hinhanh, $Video, $Diadiem) {
     $Video = mysql_real_escape_string($Video);
     $Diadiem = mysql_real_escape_string($Diadiem);
 
-    $sql = "INSERT INTO `weddingevents`.`tb_baiviet` (
+    $sql = "INSERT INTO `tb_baiviet` (
 	`LoaiId`, `Tieude`, `Date`, `Noidung`, 
 	`Hinhanh`, `Video`, `Diadiem`) 
 	VALUES ('$LoaiId', '$Ten','$Date', '$Noidung', 
@@ -77,7 +75,7 @@ function addFeed($LoaiId, $Ten, $Date, $Noidung, $Hinhanh, $Video, $Diadiem) {
 
 function updateFeedDescript($id, $des) {
     $des = mysql_real_escape_string($des);
-    $sql = "UPDATE `weddingevents`.`tb_baiviet`
+    $sql = "UPDATE `tb_baiviet`
 	SET `Noidung` = '$des'	
 	WHERE `tb_baiviet`.`Id` = $id;";
     $queryResult = mysql_query($sql);
@@ -85,14 +83,21 @@ function updateFeedDescript($id, $des) {
 }
 
 function updateFeedImg($id, $img) {
-    $sql = "UPDATE `weddingevents`.`tb_baiviet`
+    $sql = "UPDATE `tb_baiviet`
 	SET `Hinhanh` = '$img'	
 	WHERE `tb_baiviet`.`Id` = $id;";
     $queryResult = mysql_query($sql);
     return $queryResult;
 }
+function updateFeedVideo($id, $vid) {
+    $sql = "UPDATE `tb_baiviet`
+	SET `Video` = '$vid'	
+	WHERE `tb_baiviet`.`Id` = $id;";
+    $queryResult = mysql_query($sql);
+    return $queryResult;
+}
 function deleteFeed($id) {
-    $sql = "DELETE FROM `weddingevents`.`tb_baiviet` WHERE `tb_baiviet`.`Id` = $id;";
+    $sql = "DELETE FROM `tb_baiviet` WHERE `tb_baiviet`.`Id` = $id;";
     $queryResult = mysql_query($sql);
     if (!$queryResult) {
         echo 'ERROR!';
@@ -160,6 +165,7 @@ function buildGridFeed($type, $page, $size) {
     $itemList = getFeedList($type);
 
     echo '<table class="admin-grid">';
+    echo "<tr class='admin-grid-head'><td>ID</td><td>LoaiID</td><td>TieuDe</td><td>DiaDiem</td><td>NoiDung</td><td>HinhAnh</td><td>Video</td><td colspan=2></td></tr>";
     $max = ($page + 1) * $size > count($itemList) ? count($itemList) : ($page + 1) * $size;
     for ($i = $page * $size; $i < $max; $i++) {
         $item = $itemList[$i];
@@ -169,9 +175,12 @@ function buildGridFeed($type, $page, $size) {
         echo "<td>" . $item->LoaiId . "</td>";
         echo "<td class='grid-col-medium'>" . $item->Ten . "</td>";
         echo "<td>" . $item->Diadiem . "</td>";
-        $html = str_get_html($item->Noidung);
-        echo "<td class='grid-col-large'><div class='grid-des'>" . $html->plaintext . "</div></td>";
-        echo "<td><img class='grid-img' src='images/resource/img/" . $item->Id . "/" . $item->Id . "-0.jpeg' />";
+        $html = $item->Noidung==''?$item->Noidung: str_get_html($item->Noidung)->plaintext;
+        echo "<td class='grid-col-large'><div class='grid-des'>" . $html . "</div></td>";
+        echo "<td>";
+        echo "<a href='baiviet.php?id=" . $item->Id . "' />";
+        echo "<img class='grid-img' src='images/resource/img/" . $item->Id . "/" . $item->Id . "-0.jpeg' />";
+        echo "</a>";
         echo "<td>" . $item->Video . "</td>";
         echo "<td class='grid-col-button'><a class='btn-edit' name='btnEdit' title='Chỉnh sửa' onClick='editFeedAjax(" . $item->Id . ")'></a></td>";
         echo "<td class='grid-col-button'><a class='btn-delete' name='btnDelete' title='Xóa' onClick='deleteFeedAjax(" . $item->Id . ")'></a></td>";

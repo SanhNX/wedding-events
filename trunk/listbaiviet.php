@@ -30,13 +30,23 @@
                         include 'BLL/feedBll.php';
                         include './utils/simple_html_dom.php';
                         if (count($_REQUEST) == 0)
-                            echo "----------";
+                            header("Location: error.php");
                         else {
+                            $size=5;
+                            $type=$_REQUEST['type'];
                             $itemList = getFeedList($_REQUEST['type']);
-                            foreach ($itemList as $item) {
+                            $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 0;
+
+                            $max = ($page + 1) * $size > count($itemList) ? count($itemList) : ($page + 1) * $size;
+                            for ($i = $page * $size; $i < $max; $i++) {
+                                $item = $itemList[$i];
                                 echo "<li class='topic-item'>";
                                 echo "<a class='topic-link' href=baiviet.php?id=" . $item->Id . ">";
+                                                                echo "<div class='topic-item-src'>";
+
                                 echo "<img class='topic-item-pic' src='images/resource/img/" . $item->Id . "/" . $item->Id . "-0.jpeg' />";
+                                                   echo "</div>";
+             
                                 echo "<div class='topic-item-content'>";
                                 echo "<span class='content-title'>" . $item->Ten . "</span>";
                                 echo "<div class='content-datetime'>";
@@ -48,6 +58,12 @@
                                 echo "</div>";
                                 echo "</a>";
                                 echo "</li>";
+                            }
+                            for ($i = 0; $i < count($itemList) / $size; $i++) {
+                                if ($page == $i)
+                                    echo "<span class='btn-page active'>" . ($i + 1) . "</span>";
+                                else
+                                    echo "<a class='btn-page' href='listbaiviet.php?type=$type&page=$i'>" . ($i + 1) . "</a>";
                             }
                         }
                         ?>

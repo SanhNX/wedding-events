@@ -43,10 +43,30 @@ function editFeedAjax(id) {
             var obj = JSON.parse(response);
             $(".nicEdit-main").html(obj.Noidung);
             $("#txtName").val(obj.Tieude);
-
         }
     });
     //alert($('#item-'+id)[0].childNodes[0].innerText);
 
 
+}
+function ddChange() {
+    var id= $("#cboAddress").val();
+    $("#cboSubAddress").html("");
+    $.ajax({
+        url: "module/ajax-get.php",
+        type: "POST",
+        data: {type: 'listDD', id: id},
+        cache: false,
+        success: function(response) {
+            if(response=='')return ;
+            var obj = JSON.parse(response);
+            
+            for (var i=0;i<obj.list.length;i++) {
+                var opt = document.createElement('option');
+                $(opt).val(obj.list[i].Id);
+                $(opt).text(obj.list[i].Ten);
+                $("#cboSubAddress").append(opt);
+            }
+        }
+    });
 }

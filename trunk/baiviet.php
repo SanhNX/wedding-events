@@ -54,7 +54,7 @@
 
                     include 'BLL/feedBll.php';
                     if (count($_REQUEST) == 0)
-                        echo "----------";
+                        header("Location: error.php");
                     else {
                         $item = getFeed_byID($_REQUEST['id']);
                         echo "<div class='descriptionTopic'>";
